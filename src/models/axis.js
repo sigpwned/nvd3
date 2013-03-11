@@ -82,7 +82,7 @@ nv.models.axis = function() {
           axisLabel.enter().append('text').attr('class', 'nv-axislabel')
               .attr('text-anchor', 'middle')
               .attr('y', 0);
-          var w = (scale.range().length==2) ? scale.range()[1] : (scale.range()[scale.range().length-1]+(scale.range()[1]-scale.range()[0]));
+          var w = scale.range().length==1 ? scale.range()[0] : ((scale.range().length==2) ? scale.range()[1] : (scale.range()[scale.range().length-1]+(scale.range()[1]-scale.range()[0])));
           axisLabel
               .attr('x', w/2);
           if (showMaxMin) {
@@ -129,7 +129,7 @@ nv.models.axis = function() {
           axisLabel.enter().append('text').attr('class', 'nv-axislabel')
             .attr('text-anchor', 'middle')
             .attr('y', xLabelMargin);
-          var w = (scale.range().length==2) ? scale.range()[1] : (scale.range()[scale.range().length-1]+(scale.range()[1]-scale.range()[0]));
+          var w = scale.range().length==1 ? scale.range()[0] : ((scale.range().length==2) ? scale.range()[1] : (scale.range()[scale.range().length-1]+(scale.range()[1]-scale.range()[0])));
           axisLabel
               .attr('x', w/2);
           if (showMaxMin) {
